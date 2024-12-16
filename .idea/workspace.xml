@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5b1305f8-a636-4b9c-a038-1dd3c12ec628" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/AuditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/AuditorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/OwnerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/service/CRUDService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/service/CRUDService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/xventure/service/CRUDService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/xventure/service/CRUDService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
