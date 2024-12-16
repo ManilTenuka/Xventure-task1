@@ -55,9 +55,9 @@ public class AdminController {
         return crudService.deleteUsers(id);
     }
 
-    @PutMapping("updateUser/{id}/{username}")
-    public ResponseEntity<?> updateUserName(@PathVariable Integer id,@PathVariable String username){
-        return crudService.updateUsername(id , username);
+    @PutMapping("updateUser/{username}")
+    public ResponseEntity<?> updateUserName(@PathVariable String username){
+        return crudService.updateUsername( username);
     }
 
     @PutMapping("updatePassword")
@@ -71,7 +71,7 @@ public class AdminController {
     }
 
 
-    @PutMapping("deletePermission/{role}/{permissionId}")
+    @DeleteMapping("deletePermission/{role}/{permissionId}")
     public ResponseEntity<?> deletePermission(@PathVariable String role,@PathVariable Integer permissionId){
         return crudService.deletePermissions(role,permissionId);
     }

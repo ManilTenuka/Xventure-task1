@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b1305f8-a636-4b9c-a038-1dd3c12ec628" name="Changes" comment="" />
+    <list default="true" id="5b1305f8-a636-4b9c-a038-1dd3c12ec628" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/AuditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/AuditorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/OwnerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/service/CRUDService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/service/CRUDService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/service/ExceptionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/service/ExceptionsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/xventure/service/CRUDService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/xventure/service/CRUDService.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +27,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -38,6 +50,7 @@
   "keyToString": {
     "Application.XventureApplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/DELL/Downloads/User-Management-System-Backend",
@@ -83,7 +96,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/xventure/service/ExceptionsService.java</url>
-          <line>31</line>
+          <line>33</line>
           <properties class="com.example.xventure.service.ExceptionsService" method="isValidPassword">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -92,18 +105,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/xventure/service/CRUDService.java</url>
-          <line>166</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/xventure/service/CRUDService.java</url>
-          <line>188</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/xventure/service/CRUDService.java</url>
-          <line>272</line>
+          <line>312</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/xventure/service/CRUDService.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/xventure/service/CRUDService.java</url>
+          <line>224</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/xventure/service/ExceptionsService.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

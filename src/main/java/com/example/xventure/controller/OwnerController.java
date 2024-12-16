@@ -56,9 +56,9 @@ public class OwnerController {
         return crudService.deleteUsers(id);
     }
 
-    @PutMapping("updateUser/{id}/{username}")
-    public ResponseEntity<?> updateUserName(@PathVariable Integer id,@PathVariable String username){
-        return crudService.updateUsername(id , username);
+    @PutMapping("updateUser/{username}")
+    public ResponseEntity<?> updateUserName(@PathVariable String username){
+        return crudService.updateUsername(username);
     }
 
     @PutMapping("updatePassword")

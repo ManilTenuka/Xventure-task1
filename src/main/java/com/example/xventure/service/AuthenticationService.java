@@ -39,6 +39,10 @@ public class AuthenticationService {
             return ResponseEntity.badRequest().body("User has already Registered.");
         }
 
+        if(userRepository.existsByUsername(request.getUsername())){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body("Username Already Exists");
+        }
+
         //checks whether all rows are filled
         if(exceptionsService.isUserInfoEmpty(UserMapper.maptoUserDto(request))){
             return ResponseEntity.badRequest().body("All rows must be filled.");
@@ -68,14 +72,12 @@ public class AuthenticationService {
 
     public AuthenticationResponse authenticate(User request) {
         try {
-            System.out.println("Reached Authentication.authenticate ");
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             request.getEmail(),
                             request.getPassword()
                     )
             );
-            System.out.println("Came here");
 
             // If authentication succeeds, continue with the logic
             User user = userRepository.findByEmail(request.getEmail()).orElseThrow();

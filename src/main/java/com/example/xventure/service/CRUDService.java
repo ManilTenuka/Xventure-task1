@@ -44,10 +44,16 @@ public class CRUDService {
     @Autowired
     private PermissionsRepository permissionsRepository;
 
+
     public ResponseEntity<?> viewPermissions(){
 
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if(authentication==null){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("You don't have access. Try Login again");
+        }
+        Role roleName = Role.valueOf(authentication.getAuthorities().iterator().next().getAuthority());
 
-        if(!exceptionsService.checkUserHasPermission(Role.owner, PermissionIds.viewPermissions)){
+        if(!exceptionsService.checkUserHasPermission(roleName, PermissionIds.viewPermissions)){
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You don't have permission to View Permissions.");
         }; //checks whether the user has permission
 
@@ -77,7 +83,13 @@ public class CRUDService {
 
     public ResponseEntity<?> viewUsers(){
 
-        if(!exceptionsService.checkUserHasPermission(Role.owner, PermissionIds.viewUser)){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if(authentication==null){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("You don't have access. Try Login again");
+        }
+        Role roleName = Role.valueOf(authentication.getAuthorities().iterator().next().getAuthority());
+
+        if(!exceptionsService.checkUserHasPermission(roleName, PermissionIds.viewUser)){
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You don't have permission to View Users.");
         };
 
@@ -89,7 +101,13 @@ public class CRUDService {
 
     public ResponseEntity<?> searchUsers(String type, String index, String subString){
 
-        if(!exceptionsService.checkUserHasPermission(Role.owner, PermissionIds.searchUser)){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if(authentication==null){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("You don't have access. Try Login again");
+        }
+        Role roleName = Role.valueOf(authentication.getAuthorities().iterator().next().getAuthority());
+
+        if(!exceptionsService.checkUserHasPermission(roleName, PermissionIds.searchUser)){
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You don't have permission to search Users.");
         };
 
@@ -138,10 +156,17 @@ public class CRUDService {
         if(authentication==null){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("You don't have access. Try Login again");
         }
+        Role roleName = Role.valueOf(authentication.getAuthorities().iterator().next().getAuthority());
 
-        if(!exceptionsService.checkUserHasPermission(Role.owner, PermissionIds.createUser)){
+        if(!exceptionsService.checkUserHasPermission(roleName, PermissionIds.createUser)){
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You don't have permission to create Users.");
         };
+
+        String roleHierachy = exceptionsService.checkUserHierachy(userDto.getRole().toString(),authentication.getAuthorities().iterator().next().getAuthority()); //checks whether a user has the power to do the operation
+        if(!roleHierachy.equals("true")){
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(roleHierachy);
+        }
+
 
         String currentRole = authentication.getAuthorities().iterator().next().getAuthority(); //to get the current userData
         String newRole = userDto.getRole().name();
@@ -169,10 +194,17 @@ public class CRUDService {
         if(authentication==null){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("You don't have access. Try Login again");
         }
+        Role roleName = Role.valueOf(authentication.getAuthorities().iterator().next().getAuthority());
 
-        if(!exceptionsService.checkUserHasPermission(Role.owner, PermissionIds.deleteUser)){
+
+        if(!exceptionsService.checkUserHasPermission(roleName, PermissionIds.deleteUser)){
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You don't have permission to delete Users.");
         };
+
+        String roleHierachy = exceptionsService.checkUserHierachy(userRepository.findById(userID).get().getRole().toString(),authentication.getAuthorities().iterator().next().getAuthority()); //checks whether a user has the power to do the operation
+        if(!roleHierachy.equals("true")){
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(roleHierachy);
+        }
 
 
         //checks whether the user exists
@@ -185,25 +217,27 @@ public class CRUDService {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body("User deleted successfully");
     }
 
-    public ResponseEntity<?> updateUsername(Integer id,String username){
+    public ResponseEntity<?> updateUsername(String username){
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if(authentication==null){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("You don't have access. Try Login again");
         }
+        Role roleName = Role.valueOf(authentication.getAuthorities().iterator().next().getAuthority());
+        String userEmail = authentication.getName();
 
-        if(!exceptionsService.checkUserHasPermission(Role.owner, PermissionIds.updateUser)){
+        if(!exceptionsService.checkUserHasPermission(roleName, PermissionIds.updateUser)){
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You don't have permission to update Users.");
         };
 
 
 
-        if(id==null || username==null){
+        if( username==null){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Please make sure to give a id and a username");
 
         }
 
-        Optional<User> user = userRepository.findById(id);
+        Optional<User> user = userRepository.findByEmail(userEmail);
 
 
         if(user.isEmpty()){
@@ -234,6 +268,7 @@ public class CRUDService {
         if(authentication==null){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("You don't have access. Try Login again");
         }
+        Role roleName = Role.valueOf(authentication.getAuthorities().iterator().next().getAuthority());
 
         String userEmail = authentication.getName();
         Optional<User> user = userRepository.findByEmail(userEmail);
@@ -266,6 +301,8 @@ public class CRUDService {
         if(authentication==null){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("You don't have access. Try Login again");
         }
+        Role roleName = Role.valueOf(authentication.getAuthorities().iterator().next().getAuthority());
+
 
         Optional<Permissions> permissions = permissionsRepository.findById(PermissionId);
 
@@ -273,7 +310,7 @@ public class CRUDService {
         if(!(role.equals("owner") || role.equals("admin") || role.equals("auditor"))){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No such role is found");
         }
-        if(!exceptionsService.checkUserHasPermission(Role.owner, PermissionIds.updatePermissions)){
+        if(!exceptionsService.checkUserHasPermission(roleName, PermissionIds.updatePermissions)){
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You don't have permission to update Permissions.");
         };
 
@@ -303,6 +340,7 @@ public class CRUDService {
         if(authentication==null){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("You don't have access. Try Login again");
         }
+        Role roleName = Role.valueOf(authentication.getAuthorities().iterator().next().getAuthority());
 
         Optional<Permissions> permissions = permissionsRepository.findById(PermissionId);
 
@@ -310,7 +348,7 @@ public class CRUDService {
         if(!(role.equals("owner") || role.equals("admin") || role.equals("auditor"))){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No such role is found");
         }
-        if(!exceptionsService.checkUserHasPermission(Role.owner, PermissionIds.updatePermissions)){
+        if(!exceptionsService.checkUserHasPermission(roleName, PermissionIds.updatePermissions)){
             return ResponseEntity.status(HttpStatus.FORBIDDEN).body("You don't have permission to delete Permissions.");
         };
 
