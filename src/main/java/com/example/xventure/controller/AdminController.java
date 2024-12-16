@@ -75,4 +75,9 @@ public class AdminController {
     public ResponseEntity<?> deletePermission(@PathVariable String role,@PathVariable Integer permissionId){
         return crudService.deletePermissions(role,permissionId);
     }
+
+    @GetMapping("/getUserInfo")
+    public ResponseEntity<String> getCurrentUserInformation(){
+        return crudService.getCurrentUserInformation();
+    }
 }

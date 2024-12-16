@@ -9,9 +9,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/AuditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/AuditorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/controller/OwnerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/service/CRUDService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/service/CRUDService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/xventure/service/ExceptionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/xventure/service/ExceptionsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/xventure/service/CRUDService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/xventure/service/CRUDService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +103,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/xventure/service/CRUDService.java</url>
-          <line>312</line>
+          <line>309</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -115,7 +113,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/xventure/service/CRUDService.java</url>
-          <line>224</line>
+          <line>221</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

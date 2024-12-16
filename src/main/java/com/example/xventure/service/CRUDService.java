@@ -370,4 +370,21 @@ public class CRUDService {
         return ResponseEntity.status(HttpStatus.OK).body("role: [" + role + "] permission: [" + permissions.get().getName() + "] Deleted Successfully\n" );
     }
 
+    public ResponseEntity<String> getCurrentUserInformation(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if(authentication==null){
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("You don't have access. Try Login again");
+        }
+
+        Optional<User> user = userRepository.findByEmail(authentication.getName());
+        if(user.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found .");
+        }
+
+        String username = user.get().getUsername();
+        String email = user.get().getEmail();
+        Integer id = user.get().getId();
+        return  ResponseEntity.status(HttpStatus.OK).body("User Id : " + id + "\nEmail : " + email + "\nUsername : " + username);
+    }
+
 }
