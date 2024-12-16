@@ -1,0 +1,17 @@
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\config\SecurityConfig.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\controller\AuthenticationController.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\controller\UserController.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\dto\LoginDto.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\dto\UserDto.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\Exceptions\EmailAlreadyExistsException.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\mapper\UserMapper.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\model\Permissions.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\model\Role.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\model\Role_Permissions.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\model\User.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\repository\RoleRepository.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\repository\UserRepository.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\service\AuthService.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\service\JwtService.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\service\UserService.java
+C:\Users\DELL\Downloads\xventure\xventure\src\main\java\com\example\xventure\XventureApplication.java

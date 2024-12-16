@@ -1,0 +1,17 @@
+com\example\xventure\dto\UserDto.class
+com\example\xventure\controller\AuthenticationController.class
+com\example\xventure\service\UserService.class
+com\example\xventure\XventureApplication.class
+com\example\xventure\Exceptions\EmailAlreadyExistsException.class
+com\example\xventure\controller\UserController.class
+com\example\xventure\model\Role_Permissions.class
+com\example\xventure\model\Permissions.class
+com\example\xventure\config\SecurityConfig.class
+com\example\xventure\model\Role.class
+com\example\xventure\service\AuthService.class
+com\example\xventure\mapper\UserMapper.class
+com\example\xventure\model\User.class
+com\example\xventure\service\JwtService.class
+com\example\xventure\repository\RoleRepository.class
+com\example\xventure\dto\LoginDto.class
+com\example\xventure\repository\UserRepository.class
